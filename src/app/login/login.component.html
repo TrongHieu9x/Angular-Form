@@ -1,0 +1,22 @@
+<div class="container">
+  <form [formGroup]="login" (ngSubmit)="submit()">
+    <tr>
+      <th colspan="2"><h1 id="title">Login</h1></th>
+    </tr>
+    <tr>
+      <th><label for="email" class="form-label">Email</label> </th>
+      <td><input class="form-control" id="email" formControlName="email" type="email"></td>
+      <td><div *ngIf="!login.get('email')?.valid && login.get('email')?.touched">Email is required</div> </td>
+    </tr>
+    <tr>
+      <th><label for="password" class="form-label">Password</label> </th>
+      <td><input class="form-control" id="password" formControlName="password" type="password"></td>
+      <td><div *ngIf="!login.get('password')?.valid && login.get('password')?.touched">Password is required</div> </td>
+    </tr>
+    <tr>
+      <td colspan="2" id="center">
+        <button type="submit" class="btn btn-primary" id="submit">Login</button>
+      </td>
+    </tr>
+  </form>
+</div>
